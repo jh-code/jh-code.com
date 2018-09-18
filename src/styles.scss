@@ -1,0 +1,40 @@
+@import './scss/theme';
+
+@import '~bootstrap/scss/utilities/sizing';
+@import '~bootstrap/scss/utilities/display';
+@import '~bootstrap/scss/utilities/flex';
+@import '~bootstrap/scss/utilities/position';
+@import '~bootstrap/scss/utilities/shadows';
+@import '~bootstrap/scss/utilities/text';
+@import '~bootstrap/scss/utilities/spacing';
+@import '~bootstrap/scss/utilities/background';
+
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/images';
+@import '~bootstrap/scss/code';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/grid';
+
+/* my global styles */
+
+body {
+    overflow: hidden;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+}
+
+a {
+    background-color: $secondary;
+}
+
+::selection {
+    background: $light;
+    color: hotpink; /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+    background: $light;
+    color: hotpink; /* Gecko Browsers */
+}

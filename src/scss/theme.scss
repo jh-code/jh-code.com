@@ -1,0 +1,18 @@
+@import 'functions';
+@import 'mixins';
+@import 'variables';
+
+@include mat-core($custom-typography);
+@include angular-material-theme($light-theme);
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+.mat-focused .mat-form-field-label {
+    color: $secondary !important;
+}
+
+.mat-focused .mat-form-field-underline .mat-form-field-ripple {
+        background-color: $secondary;
+}
