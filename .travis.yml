@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "8"
+  - "8.12.0"
 dist: trusty
 sudo: false
 
@@ -10,7 +10,7 @@ cache:
 
 script:
   - npm run lint
-  - npm run build:prod
+  - npm run ci
 
 deploy:
   provider: pages
