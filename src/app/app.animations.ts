@@ -1,5 +1,5 @@
 import { style, animate, stagger, AnimationMetadata, query, useAnimation } from '@angular/animations';
-import { bounce, pulse, jello, bounceIn, bounceOut, flip, rollIn, rollOut, fadeInUp, fadeOutDown, zoomIn, zoomOut, fadeIn, fadeOutUp, fadeOut, fadeInLeft, flipInY, flipOutY } from 'ng-animate';
+import { pulse, rollIn, rollOut, zoomIn, zoomOut, fadeOut, flipInY, flipOutY } from 'ng-animate';
 
 export const flipInStagger = [
     style({ transform: 'rotateX(90deg)' }),
@@ -8,13 +8,10 @@ export const flipInStagger = [
 
 export const aboutAnimationIn: AnimationMetadata[] = [
     query('h1, .skills h4, .avatar, .whoami p, .whoami h4, i, .resume', style({ opacity: 0 })),
-    query('h1, .skills h4, .whoami p, .whoami h4', useAnimation(zoomIn, { params: { timing: .3 } })),
-    query('i', stagger(15, useAnimation(rollIn, { params: { timing: .15 } }))),
-    query('.avatar', useAnimation(flipInY, { params: { timing: .5 } })),
-    query('.resume', [
-        useAnimation(zoomIn, { params: { timing: .3 } }),
-        useAnimation(pulse, { params: { timing: .3, delay: 5 } })
-    ])
+    query('h1, .skills h4, .whoami p, .whoami h4, .resume', useAnimation(zoomIn, { params: { timing: .3 } })),
+    query('.avatar', useAnimation(flipInY, { params: { timing: .3 } })),
+    query('i', stagger(25, useAnimation(rollIn, { params: { timing: .3 } }))),
+    query('.resume', useAnimation(pulse, { params: { timing: .3, delay: 5 } }))
 ];
 
 export const aboutAnimationOut: AnimationMetadata[] = [
