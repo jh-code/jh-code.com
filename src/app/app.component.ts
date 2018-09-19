@@ -22,8 +22,8 @@ export class AppComponent implements OnInit {
     public socialIcons: SocialIcon[] = socialIcons;
 
     public aboutAnimateState: string;
-    public aboutTitleAnimateState: string = 'out';
-    public homeAnimateState: string = 'out';
+    public aboutTitleAnimateState = 'out';
+    public homeAnimateState = 'out';
 
     constructor(
         private http: HttpClient,
@@ -45,8 +45,8 @@ export class AppComponent implements OnInit {
             });
 
         this.http.get('assets/social-icons.json')
-            .subscribe((socialIcons: SocialIcon[]): void => {
-                this.socialIcons = socialIcons;
+            .subscribe((icon: SocialIcon[]): void => {
+                this.socialIcons = icon;
             });
     }
 

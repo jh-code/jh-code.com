@@ -1,4 +1,4 @@
-import { ElementRef, Input, Directive, OnChanges, Output, EventEmitter, SimpleChanges } from '@angular/core';
+import { ElementRef, Input, Directive, OnChanges, SimpleChanges } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { AnimationBuilder, AnimationPlayer } from '@angular/animations';
 import { aboutAnimationIn, aboutAnimationOut } from '../app.animations';
@@ -8,8 +8,6 @@ import { aboutAnimationIn, aboutAnimationOut } from '../app.animations';
 })
 export class VisibleDirective implements OnChanges {
     @Input() public scrollWindow: ElementRef;
-
-    @Output() public onVisibilityChange: EventEmitter<boolean> = new EventEmitter();
 
     private visible = false;
     private player: AnimationPlayer;
