@@ -4,8 +4,10 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
+        "start:docs": "npm run docs && compodoc src -s",
         "build": "ng build",
         "build:prod": "ng build --prod",
+        "docs": "compodoc -p src/tsconfig.app.json",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e"
@@ -39,6 +41,7 @@
         "@angular/cli": "~6.2.2",
         "@angular/compiler-cli": "^6.1.0",
         "@angular/language-service": "^6.1.0",
+        "@compodoc/compodoc": "^1.1.5",
         "@types/jasmine": "~2.8.8",
         "@types/jasminewd2": "~2.0.3",
         "@types/node": "~8.9.4",
