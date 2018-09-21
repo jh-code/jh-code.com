@@ -4,8 +4,8 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "start:docs": "npm run docs && compodoc src -s",
-        "build": "ng build --prod",
+        "start:docs": "compodoc src -s",
+        "build": "ng build",
         "build:docs": "compodoc -p src/tsconfig.app.json",
         "test": "ng test",
         "lint": "ng lint",
