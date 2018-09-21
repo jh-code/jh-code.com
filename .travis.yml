@@ -10,7 +10,8 @@ cache:
 
 script:
   - npm run lint
-  - npm run build:prod
+  - npm run build
+  - npm run build:docs
 
 deploy:
   provider: pages

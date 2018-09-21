@@ -5,9 +5,8 @@
         "ng": "ng",
         "start": "ng serve",
         "start:docs": "npm run docs && compodoc src -s",
-        "build": "ng build",
-        "build:prod": "ng build --prod",
-        "docs": "compodoc -p src/tsconfig.app.json",
+        "build": "ng build --prod",
+        "build:docs": "compodoc -p src/tsconfig.app.json",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e"
