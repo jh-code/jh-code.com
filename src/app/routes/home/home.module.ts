@@ -25,7 +25,7 @@ import { HeaderModule } from '../../components/header/header.module';
     HeaderModule
   ],
   declarations: [
-    HomeComponent, 
+    HomeComponent,
     VisibleDirective
   ]
 })
