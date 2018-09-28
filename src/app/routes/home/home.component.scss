@@ -1,0 +1,75 @@
+@import '../../../scss/variables';
+
+:host {
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    top: $nav-height;
+    width: 100%;
+    height: calc(100vh - #{$nav-height});
+}
+
+#home {
+    height: $max-page-height;
+    position: relative;
+
+    .home-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .h2 {
+        span {
+            position: relative;
+        }
+
+        .cursor {
+            background-color: $secondary;
+            -webkit-animation: blink 1s step-end infinite;
+            animation: blink 1s step-end infinite;
+        }
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .btn {
+        margin: 1em 0 2em 0;
+    }
+}
+
+#about {
+    .avatar {
+        width: 50%;
+        margin: 0 auto 2em auto;
+        border-radius: 50%;
+    }
+
+    .dev-icons {
+        i {
+            font-size: 3em;
+            display: inline-block;
+            margin: 0.25em 0.15em;
+        }
+    }
+}
+
+footer {
+    padding: 0.5em 0;
+}
+
+
+
+@-webkit-keyframes blink {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blink {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}

@@ -1,0 +1,154 @@
+<app-header></app-header>
+
+<div id="pages" #scroller>
+    <app-page id="home" class="page d-flex justify-content-center align-items-center bg-primary" setHashOnScroll=""
+        #home>
+        <particles [style]="particlesStyle" [width]="100" [height]="100" [params]="particlesParams" *ngIf="particlesStyle && particlesParams"></particles>
+        <div class="home-content text-center">
+            <div>
+                <span class="h1 d-block d-md-inline-block">hello, i'm</span>
+                <span class="d-none d-md-inline-block">&nbsp;&nbsp;</span>
+                <span class="h1 d-block d-md-inline-block">
+                    <span class=" text-light bg-secondary">jared helgeson</span>
+                </span>
+            </div>
+
+            <h1 class="h2"><span>full stack web developer</span> <span class="cursor">&nbsp;</span></h1>
+            <div>
+                <a mat-raised-button href="#about" class="btn" (click)="scrollIntoView($event, 'about')">view my work</a>
+                <p class="small">this site is best viewed on <a href="https://www.google.com/chrome/" target="_blank">google
+                        chrome</a> or <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">firefox</a></p>
+            </div>
+        </div>
+    </app-page>
+
+    <app-page id="about" class="page d-flex align-items-center text-light text-center bg-secondary" appVisible
+        [scrollWindow]="el" #about>
+        <div class="container">
+            {{aboutAnimateState}}
+            <h1 class="page-title mb-5"><span class="text-secondary bg-light">about</span></h1>
+
+            <div class="row text-center">
+                <div class="col-md-5 d-flex align-items-center">
+                    <div class="whoami">
+                        <img class="avatar img-fluid img-thumbnail" src="assets/jared-helgeson.png">
+                        <h4>who am i?</h4>
+                        <p>i am a self-taught full stack web developer with 10+ years of experience located in
+                            wisconsin. i love building user interfaces and
+                            then bringing them to life. <a class="bg-light text-secondary" href="#contact" (click)="scrollIntoView($event, 'contact')">let's
+                                build something awesome!</a></p>
+                    </div>
+                </div>
+                <hr class="col-12 d-block d-md-none">
+                <div class="col-md-7 d-flex align-items-center">
+                    <div class="skills d-block w-100">
+                        <h4>what can i do?</h4>
+
+                        <div class="dev-icons w-75 m-auto">
+                            <i matTooltipPosition="above" matTooltip="html5" class="devicon-html5-plain colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="css3" class="devicon-css3-plain colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="sass" class="devicon-sass-original colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="javascript" class="devicon-javascript-plain colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="typescript" class="devicon-typescript-plain colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="coffeescript" class="devicon-coffeescript-original ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="jquery" class="devicon-jquery-plain colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="nodejs" class="devicon-nodejs-plain colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="bootstrap" class="devicon-bootstrap-plain ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="linux" class="devicon-linux-plain ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="apache" class="devicon-apache-line ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="nginx" class="devicon-nginx-original colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="mysql" class="devicon-mysql-plain ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="mongodb" class="devicon-mongodb-plain colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="php" class="devicon-php-plain colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="wordpress" class="devicon-wordpress-plain ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="git" class="devicon-git-plain colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="photoshop" class="devicon-photoshop-plain colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="illustrator" class="devicon-illustrator-plain colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="angularjs &amp; angular 2+" class="devicon-angularjs-plain colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="react" class="devicon-react-original colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="webpack" class="devicon-webpack-plain colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="grunt" class="devicon-grunt-plain colored ng-star-inserted"></i>
+                            <i matTooltipPosition="above" matTooltip="gulp" class="devicon-gulp-plain colored ng-star-inserted"></i>
+                        </div>
+
+                        <p class="resume mt-4"><a href="assets/resume.docx" class="bg-light text-secondary">download my
+                                resume</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </app-page>
+
+    <app-page id="portfolio" class="page d-flex" #portfolio>
+        <div class="container">
+            <h1 class="page-title mb-4 text-center"><span class="text-light bg-secondary">recent work</span></h1>
+
+            <div class="d-flex align-items-center h-100">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <img src="assets/ng-cms-thumbnail.jpg" class="img-fluid img-thumbnail">
+                        <h4 class="mt-2">ng-cms <small>(in development)</small></h4>
+                        <p><small>angular 6, material design, bootstrap</small></p>
+                        <a href="https://jh-code.github.io/ng-cms" target="_blank">view demo</a>
+                    </div>
+                    <hr class="col-12 mb-4 d-md-none">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <img src="assets/bluechip-thumbnail.jpg" class="img-fluid img-thumbnail">
+                        <h4 class="mt-2">bluechip computer &amp; tech</h4>
+                        <p><small>angular 6, material design, bootstrap</small></p>
+                        <a href="https://bluechipcomputerandtech.com" target="_blank">visit website</a>
+                    </div>
+                    <hr class="col-12 mb-4 d-md-none">
+                    <p class="col-12 text-center mt-4"><span class="w-100">more coming soon</span></p>
+                    <!--
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <img src="assets/bluechip-thumbnail.jpg" class="img-fluid img-thumbnail">
+                        <h4 class="mt-2">bluechip computer &amp; tech</h4>
+                        <p><small>angular 6, material design</small></p>
+                        <a href="https://bluechipcomputerandtech.com" target="_blank">visit website</a>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </app-page>
+
+    <app-page id="contact" class="page d-flex align-items-center bg-primary" #contact>
+        <div class="container text-center">
+            <h1 class="page-title mb-5"><span class="text-secondary bg-light">contact</span></h1>
+
+            <div class="row d-flex align-items-center">
+                <div class="col-md-4">
+                    <p class="lead">enter your name and email and a brief message and i will get back to you as soon as
+                        possible.</p>
+                </div>
+                <hr class="col-12 d-md-none">
+                <div class="col-md-7 offset-md-1">
+                    <form class="row" [formGroup]="contactForm" novalidate>
+                        <mat-form-field class="col-sm-6">
+                            <input matInput type="text" placeholder="enter your name" formControlName="name" required>
+                        </mat-form-field>
+
+                        <mat-form-field class="col-sm-6">
+                            <input matInput type="text" placeholder="enter your name" formControlName="email" required>
+                        </mat-form-field>
+
+                        <mat-form-field class="col-12">
+                            <textarea matInput type="text" placeholder="describe your project" formControlName="message"
+                                required></textarea>
+                        </mat-form-field>
+
+                        <div class="col-12">
+                            <button mat-raised-button type="submit" [disabled]="!contactForm.valid">send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </app-page>
+
+    <footer class="text-center text-light bg-dark">
+        <small>&copy; 2018 jared helgeson &mdash; <a [routerLink]="['/', 'login']" class="bg-light text-secondary">admin
+                login</a></small>
+    </footer>
+</div>
