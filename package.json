@@ -6,7 +6,7 @@
     "start": "ng serve",
     "start:docs": "compodoc src -s",
     "build": "ng build",
-    "build:docs": "compodoc -p src/tsconfig.app.json",
+    "build:docs": "compodoc -p src/tsconfig.app.json -d dist/jh-code/docs",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
