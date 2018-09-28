@@ -1,0 +1,49 @@
+@import '../../../scss/variables';
+
+header {
+  min-height: $nav-height;
+  z-index: 9999;
+  background-color: $light;
+
+  nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li a {
+          border-radius: 0.25em;
+          padding: 0.3em 0.5em;
+          margin: 0 0.5em;
+      }
+  }
+
+  .social-icons a {
+      color: $secondary;
+      margin-left: 0.5em;
+      background-color: transparent;
+
+      .socicon-facebook:hover {
+          color: #3e5b98;
+      }
+
+      .socicon-twitter:hover {
+          color: #4da7de;
+      }
+
+      .socicon-twitch:hover {
+          color: #6441a5;
+      }
+
+      .socicon-stackexchange:hover {
+          color: #2f2f2f;
+      }
+
+      .socicon-github:hover {
+          color: #221e1b;
+      }
+
+      .socicon-linkedin:hover {
+          color: #3371b7;
+      }
+  }
+}

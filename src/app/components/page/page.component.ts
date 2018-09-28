@@ -1,5 +1,6 @@
-import { Component, Input, HostBinding, ChangeDetectionStrategy, ElementRef } from '@angular/core';
+import { Component, Input, HostBinding, ChangeDetectionStrategy, ElementRef, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { SPANavService } from '../../services/spa-nav.service';
 
 @Component({
     selector: 'app-page',
@@ -7,23 +8,28 @@ import { Location } from '@angular/common';
     styleUrls: ['./page.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PageComponent {
+export class PageComponent implements OnInit {
     @Input() id = '';
     @Input() class = '';
-    @Input() setHashOnScroll = true;
+    @Input() setHashOnScroll;
 
     @HostBinding('class') get hostClass() { return this.class; }
     @HostBinding('id') get hostId() { return this.id; }
 
     constructor(
         private el: ElementRef,
-        private location: Location
+        private location: Location,
+        private spaNavService: SPANavService
     ) {
         //
     }
 
+    public ngOnInit(): void {
+        this.spaNavService.register(this);
+    }
+
     public scrollIntoView(): void {
         this.el.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        this.location.go(this.setHashOnScroll ? this.id : '');
+        this.location.go(this.setHashOnScroll ? '' : this.id);
     }
 }
