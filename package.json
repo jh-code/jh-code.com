@@ -7,6 +7,7 @@
     "start:docs": "compodoc src -s",
     "build": "ng build",
     "build:docs": "compodoc -p src/tsconfig.app.json -d dist/jh-code/docs",
+    "ci": "npm run lint && npm run build -- --prod && npm run build:docs",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
